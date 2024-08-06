@@ -1,0 +1,77 @@
+Resive j.s and css by apna college.
+
+Q1 -what is component ? why we use in react ? write simple function which print hello world.
+component is one type of function and we use every where so suppose we need to change ui then we need to only change only one place and we can also reuse the component 
+
+Q2 - can we modulerize css ? means can we write css for perticular component ?
+yes we can write css for individual component and also write for all component 
+(componentname.module.css)
+
+Q3 - how you create react app and imporant bootstrap ? what is npm ? what is import
+npm is nodepackage module it is similar to provide dependancies for run the program and 
+npm create vite@latest after give project name now go to project folder and npm install
+
+similar goto bootstrap website and that command paste it and must be important otherwise not able to
+show - just we need to copy class from bootstrap and important that boostrap file any plateform
+whatever component we made must be export so other component can import
+
+Q4 - bootstrap is POWERFULL just think of imagination ?
+	yes bootstrap is most powerfull we can configure bootstrap css and also we add our css by provide extra our classname 
+
+Q5 - how to write javascript in react ? what is jsx ? why we use className ?
+	javascript write in {} this bracket , jsx is extension of react file and we can able to write html and javascript together and return function , class we may not use because class is already define in j.s as keyword that's why
+
+Q6 - can you write j.s in css means variable and other things 
+	 yes we can write js variable in css e.g <class = "abc"> {Name} </class> so Name is evaluted.
+
+Q7 - how you write css in good way ?
+	 in chrome inspect now click on any element suppose h1 so whatever css apply on that element it display in bottom now customise css and paste in code. (css by apnacollege refer).
+
+Q8 - package.json what is it ?
+	 whatever things you important that version and related things so in package.json like bootstrap import then show in that file.
+
+Q9 - what is fragement ?
+	 fragement means it return only one container it cannot return multiple things. <react.fragement> you can return multiple container just write code between this <> </>symbol
+
+Q10 - what is map mehtod ?
+	  you can run the component in loop - and component we use array so it so every time new value in same component e.g arr["a","b","c"] then arr.map<ui>{arr}</ui> - search map syntax in j.s.
+
+Q11 - can you write html in {} javascript code for loop the ui ?
+		yes we can write it use first write code outof side and after cut and paste in {} this bracket. 
+
+		IMAGEIN FUNCTION INSIDE ARRAY HOW MUCH COMPRESS CODE OF UI. AND CLEAN CODE.
+
+Q12 - why we use key with looping component or container 
+	  because when we loop and not provide key then it will reload all the component or container 
+	  if key present than only that component reload 1 time only (generally use with arrey and map)
+
+Q13 - can we show ui based on condition 
+	  yes if then ui1 else ui2 and also validation provide after ui reload else show nothing.
+	  advantage unnessary ui not reload and make better response. (ternary best) after ui may 
+	  you write condition so that ui reload (comman sense)
+
+Q14 - what is props ? how to identify how much break component ?
+	  props means properties which passes from parent to child. it's like oops solid principle you have to self thing (if something use again and again ui then it must be component or any complex logic you can write) and assume data comes from server and pass to child for ui representation , parent reponsibility to get data from anywhere.
+	  props are immutable. single way communicate parent to child but not viseversa possible
+
+	  when passing parameter then  - 
+	  SYNTAX : 
+	  <h2>ANYNAME(this name is use as parameter) = {PASSING PARAMETER NAME OR VARIABLE NAME}<h2>
+
+Q15 - what is array destructuring ?
+	  use chatgpt or w3school and just show 1 example we use in props also 
+
+	  PROPS Adavntage :
+
+	  PROPS MAKE MORE CONCISE CLEAN CODE BECAUSE PARENT HAVE ONLY DATA WHICH PASS TO THEIR CHILD AND GRANDCHILD SO WHEN DATACHNAGE THEN ONLY PARENT CHANGE OTHER WISE ALL THINGS ARE SAME 
+
+Q16 - what is css moduler compile ?
+	  suppose we use same class name in moduler css or can we say component level css so when it compile then it provide random id so it can differntciat both same class 
+
+
+
+
+
+
+
+
