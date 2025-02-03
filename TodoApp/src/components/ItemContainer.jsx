@@ -1,55 +1,44 @@
 /* eslint-disable no-unused-vars */
-import { useState  } from "react";
+import { useRef, useState } from "react";
 import styles from "./ItemContainer.module.css";
 
 const ItemContainer = ({ handleOnClick }) => {
-  const [todoName, setTodoName] = useState("");
-  const [dueDate, setDueDate] = useState("");
-
-  const handleOnInput = (event) => {
-    setTodoName(event.target.value);
-  };
-
-  const handleOnDate = (event) => {
-    setDueDate(event.target.value);
-  };
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
   const handleOnNewButtonClick = (event) => {
     console.log(event);
     event.preventDefault();
-    handleOnClick(todoName, dueDate); // how i know that this method will return to parent app.jsx
-    setTodoName("");
-    setDueDate("");
+    const todoName = todoNameElement.current.value;
+    console.log(todoName);
+    const dueDate = dueDateElement.current.value;
+    console.log(dueDate);
+
+    handleOnClick(todoName, dueDate);
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
   };
 
   return (
     <>
-      <form
-        className="container text-center"
-        onSubmit={(event) => handleOnNewButtonClick(event)}
-      >
+      <div className="container text-center">
         <div className="row">
           <div className="col-3">
-            <input
-              type="text"
-              className={styles.input}
-              value={todoName}
-              onChange={(event) => handleOnInput(event)} // must pass argument if receiver in method
-            />
+            <input type="text" className={styles.input} ref={todoNameElement} />
           </div>
           <div className="col-3">
-            <input
-              type="date"
-              className={styles.input}
-              value={dueDate}
-              onChange={(event) => handleOnDate(event)}
-            />
+            <input type="date" className={styles.input} ref={dueDateElement} />
           </div>
           <div className="col-1">
-            <button className={`${styles.input} btn btn-primary`}>Add</button>
+            <button
+              className={`${styles.input} btn btn-primary`}
+              onClick={(event) => handleOnNewButtonClick(event)}
+            >
+              Add
+            </button>
           </div>
         </div>
-      </form>
+      </div>
     </>
   );
 };
