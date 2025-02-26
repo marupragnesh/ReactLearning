@@ -1,20 +1,24 @@
 /* eslint-disable no-unused-vars */
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import styles from "./ItemContainer.module.css";
+import { TodoItemContext } from "../store/TodoItemContext";
 
-const ItemContainer = ({ handleOnClick }) => {
+const ItemContainer = () => {
   const todoNameElement = useRef();
   const dueDateElement = useRef();
 
+  const getContextObj = useContext(TodoItemContext);
+  const addItemInTodo = getContextObj.addItemInTodo;
+
   const handleOnNewButtonClick = (event) => {
     console.log(event);
-    event.preventDefault();
+    // event.preventDefault();
     const todoName = todoNameElement.current.value;
     console.log(todoName);
     const dueDate = dueDateElement.current.value;
     console.log(dueDate);
 
-    handleOnClick(todoName, dueDate);
+    addItemInTodo(todoName, dueDate);
     todoNameElement.current.value = "";
     dueDateElement.current.value = "";
   };

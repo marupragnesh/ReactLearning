@@ -5,6 +5,7 @@ import ItemContainer from "./components/ItemContainer";
 import "bootstrap/dist/css/bootstrap.css";
 import OneItem from "./components/OneItem";
 import { useState } from "react";
+import { TodoItemContext } from "./store/TodoItemContext";
 
 function App() {
   // const initialItems = [
@@ -16,7 +17,7 @@ function App() {
 
   const [itemValues, setTodoItem] = useState([]);
 
-  const handleOnClick = (todoItem, dueDate) => {
+  const addItemInTodo = (todoItem, dueDate) => {
     setTodoItem((currentTodoItems) => {
       const newTodoList = [
         ...currentTodoItems,
@@ -26,7 +27,8 @@ function App() {
     });
   };
 
-  const handleOnDelete = (todoItem, dueDate) => {
+  const deleteItemInTodo = (todoItem, dueDate) => {
+    // condition false than remove it else store item
     const newTodoList = itemValues.filter(
       (item) => item.itemName !== todoItem || item.dueDateName !== dueDate
     );
@@ -35,12 +37,15 @@ function App() {
 
   return (
     <>
-      <todoItemContext.Provider value={[]}>
+      {/* i wrote values this will take time to solved problem */}
+      <TodoItemContext.Provider
+        value={{ itemValues, addItemInTodo, deleteItemInTodo }}
+      >
         <AppName></AppName>
-        <ItemContainer handleOnClick={handleOnClick}></ItemContainer>
+        <ItemContainer></ItemContainer>
         <WelcomeMessage></WelcomeMessage>
-        <OneItem Items={itemValues} handleOnDelete={handleOnDelete}></OneItem>
-      </todoItemContext.Provider>
+        <OneItem></OneItem>
+      </TodoItemContext.Provider>
     </>
   );
 }
